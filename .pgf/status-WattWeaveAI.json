@@ -1,0 +1,33 @@
+{
+  "project": "WattWeaveAI",
+  "version": "0.1",
+  "phase": "verify",
+  "phase_result": "passed",
+  "review_iterations": 1,
+  "verify_iterations": 1,
+  "unresolved_issues": [
+    {"id": "P2-1", "severity": "medium", "note": "AuditLog PQC signing deferred to milestone 2"},
+    {"id": "P2-2", "severity": "low", "note": "regulated_health single-class; HIPAA/EU Med Device split deferred"}
+  ],
+  "tests": {"total": 31, "passed": 31, "failed": 0, "duration_seconds": 0.90},
+  "summary": {"total": 17, "done": 17, "in_progress": 0, "blocked": 0, "skipped": 0},
+  "nodes": [
+    {"id": "W1",  "name": "Foundation/DomainTypes",          "status": "done", "deps": []},
+    {"id": "W2",  "name": "Foundation/ConfigLoader",         "status": "done", "deps": []},
+    {"id": "W3",  "name": "Sensing/WorkloadClassifier",      "status": "done", "deps": ["W1"]},
+    {"id": "W4",  "name": "Sensing/GridTelemetry",           "status": "done", "deps": ["W1"]},
+    {"id": "W5",  "name": "Sensing/DataCenterTelemetry",     "status": "done", "deps": ["W1"]},
+    {"id": "W6",  "name": "Decision/ZoneRegistry",           "status": "done", "deps": ["W1","W2"]},
+    {"id": "W7",  "name": "Decision/FeasibilityFilter",      "status": "done", "deps": ["W1"]},
+    {"id": "W8",  "name": "Decision/MultiCriteriaScorer",    "status": "done", "deps": ["W1"]},
+    {"id": "W9",  "name": "Decision/SchedulerCore",          "status": "done", "deps": ["W7","W8"]},
+    {"id": "W10", "name": "Compliance/ComplianceTagger",     "status": "done", "deps": ["W1"]},
+    {"id": "W11", "name": "Compliance/AuditLog",             "status": "done", "deps": ["W1"]},
+    {"id": "W12", "name": "ControlPlane/Facade",             "status": "done", "deps": ["W3","W4","W5","W6","W7","W8","W9","W10","W11"]},
+    {"id": "W13", "name": "ControlPlane/RestApi",            "status": "done", "deps": ["W12"]},
+    {"id": "W14", "name": "ControlPlane/Cli",                "status": "done", "deps": ["W12"]},
+    {"id": "W15", "name": "QualityGate/UnitTests",           "status": "done", "deps": ["W3","W4","W5","W6","W7","W8","W9","W10","W11"]},
+    {"id": "W16", "name": "QualityGate/ScenarioTests",       "status": "done", "deps": ["W12"]},
+    {"id": "W17", "name": "QualityGate/AcceptanceCheck",     "status": "done", "deps": ["W15","W16"]}
+  ]
+}
