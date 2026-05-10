@@ -46,6 +46,9 @@ desktop.ini
 .pgf/audit.jsonl
 .pgf/audit.jsonl.bak
 *.log
+CLAUDE.md
+AGENTS.md
+_legacy/
 
 # Local override
 config/zones.local.json

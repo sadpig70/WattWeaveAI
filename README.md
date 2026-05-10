@@ -207,9 +207,7 @@ WattWeaveAI/
 ├── config/
 │   └── zones.json                     # Seed zone registry (6 zones)
 ├── docs/
-│   ├── system_design.md               # Source: 8-agent ideation (excerpt)
-│   ├── final_idea.md                  # Source: 8-agent final idea selection
-│   └── 통합보고서.md                   # Source: integration report (Korean)
+│   └── technical-specification.md     # Software Design Specification (SDS) v0.1
 ├── src/wattweave/
 │   ├── types.py                       # Foundation/DomainTypes
 │   ├── config.py                      # Foundation/ConfigLoader
@@ -330,15 +328,13 @@ The five end-to-end scenarios encode the strengths and risks called out in the s
 
 ---
 
-## Documents That Inspired the System
+## Documentation
 
-The MVP is the engineering instantiation of an 8-agent ideation cycle whose artifacts live in `docs/`:
+- [`docs/technical-specification.md`](docs/technical-specification.md) — **Software Design Specification (SDS) v0.1.** 17 sections covering goals, glossary, architecture, domain model, routing algorithm, compliance model, audit & replay, control-plane surfaces, determinism & testing, AI_ co-evolution, ops considerations, extension points, roadmap, and appendices (acceptance-criteria index + worked example).
+- [`.pgf/DESIGN-WattWeaveAI.md`](.pgf/DESIGN-WattWeaveAI.md) — canonical Gantree + PPR design (PG notation).
+- [`.pgf/REVIEW-WattWeaveAI.md`](.pgf/REVIEW-WattWeaveAI.md) · [`WORKPLAN`](.pgf/WORKPLAN-WattWeaveAI.md) · [`VERIFY`](.pgf/VERIFY-WattWeaveAI.md) · [`REPORT`](.pgf/REPORT-WattWeaveAI.md) — full PG/PGF lifecycle artifacts.
 
-- [`docs/system_design.md`](docs/system_design.md) — original EnerGrid concept (Insight / Hypothesis / Creation / Scenario layers)
-- [`docs/final_idea.md`](docs/final_idea.md) — eight independent agents evaluating 24 candidate ideas; **5/8 selected EnerGrid AI Fabric**
-- [`docs/통합보고서.md`](docs/통합보고서.md) — Korean integration report consolidating the agent decisions
-
-Read those if you want the *why* behind the architecture; read [`.pgf/DESIGN-WattWeaveAI.md`](.pgf/DESIGN-WattWeaveAI.md) if you want the *how*.
+Read the SDS if you want the engineering *what* and *how*. Read the `.pgf/` artifacts if you want to see how the system was specified, reviewed, and verified end-to-end in PG/PGF notation.
 
 ---
 
@@ -363,6 +359,6 @@ See [`LICENSE`](LICENSE).
 
 ## Acknowledgements
 
-- The original EnerGrid AI Fabric concept emerged from a multi-agent ideation cycle preserved in `docs/`.
+- The original EnerGrid AI Fabric concept emerged from an 8-agent ideation cycle (5 of 8 agents independently selected it as the highest-scoring candidate across cross-domain fusion, 2026–2030 feasibility, multi-dimensional impact, creative emergence, and long-term scalability).
 - Designed and implemented in a single PG/PGF v2.5 full-cycle execution.
 - Generated under the Claude Code runtime.
