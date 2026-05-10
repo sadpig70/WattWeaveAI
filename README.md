@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.svg" alt="WattWeaveAI — AI-native compute–energy orchestration" width="100%"/>
+</p>
+
 # WattWeaveAI
 
 > **AI-native compute–energy orchestration control plane.**
